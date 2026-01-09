@@ -1,4 +1,3 @@
-//https://github.com/vanessamaldonado/Proyectos_DWEC/tree/master/PROYECTOS%20TYPESCRIPT/Calculadora/src
 import * as readline from "readline";
 import { Calculator } from "./calculator";
 
@@ -19,7 +18,6 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-
 
 function askUser(question: string): Promise<string> {
   return new Promise(resolve => {
@@ -43,7 +41,6 @@ async function calculate() {
   let option = -1;
 
   while (option !== 0) {
-    // Muestra el menú por consola
     printMenu();
 
     option = Number(await askUser("Elige una operación de la calculadora: "));
@@ -76,18 +73,23 @@ async function calculate() {
         break;
       }
       case 6: {
-        const n = Number(await askUser("Número: "));
-        //console.log("Resultado:", calc.sqrt(n));
+        console.log("Horas");
+        const hours = await readNumbers();
+        console.log("Tarifas");
+        const rate = await readNumbers();
+        console.log("Resultado:", calc.salary(hours, rate));
         break;
       }
       case 7: {
-        const n = Number(await askUser("Número: "));
-        //console.log("Resultado:", calc.sqrt(n));
+        console.log("Edades");
+        const age = await readNumbers();
+        console.log("Resultado:", calc.age(age));
         break;
       }
       case 8: {
-        const n = Number(await askUser("Número: "));
-       // console.log("Resultado:", calc.sqrt(n));
+        console.log("Árboles");
+        const treeHigh = await readNumbers();
+        console.log("Resultado:", calc.highTree(treeHigh));
         break;
       }
       case 0:

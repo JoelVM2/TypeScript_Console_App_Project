@@ -71,6 +71,12 @@ function readNumbers() {
         return input.split(" ").map(Number);
     });
 }
+function readWords(question) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const input = yield askUser(question);
+        return input.split(",").map(String);
+    });
+}
 function calculate() {
     return __awaiter(this, void 0, void 0, function* () {
         const calc = new calculator_1.Calculator();
@@ -94,29 +100,35 @@ function calculate() {
                     break;
                 }
                 case 4: {
-                    const nums = yield readNumbers();
-                    console.log("Resultado:", calc.multiply(nums));
+                    const countries = yield readWords("Introduce 5 Países separados por comas: ");
+                    console.log("Introduce las poblaciones correspondientes.");
+                    const population = yield readNumbers();
+                    console.log("Resultado:", calc.countriesPopulation(countries, population));
                     break;
                 }
                 case 5: {
-                    const base = Number(yield askUser("Base: "));
-                    const exp = Number(yield askUser("Exponente: "));
-                    console.log("Resultado:", calc.exponentiation(base, exp));
+                    const nums = yield readNumbers();
+                    console.log("Resultado:", calc.primeNumbers(nums));
                     break;
                 }
                 case 6: {
-                    const n = Number(yield askUser("Número: "));
-                    console.log("Resultado:", calc.sqrt(n));
+                    console.log("Horas");
+                    const hours = yield readNumbers();
+                    console.log("Tarifas");
+                    const rate = yield readNumbers();
+                    console.log("Resultado:", calc.salary(hours, rate));
                     break;
                 }
                 case 7: {
-                    const n = Number(yield askUser("Número: "));
-                    console.log("Resultado:", calc.sqrt(n));
+                    console.log("Edades");
+                    const age = yield readNumbers();
+                    console.log("Resultado:", calc.age(age));
                     break;
                 }
                 case 8: {
-                    const n = Number(yield askUser("Número: "));
-                    console.log("Resultado:", calc.sqrt(n));
+                    console.log("Árboles");
+                    const treeHigh = yield readNumbers();
+                    console.log("Resultado:", calc.highTree(treeHigh));
                     break;
                 }
                 case 0:

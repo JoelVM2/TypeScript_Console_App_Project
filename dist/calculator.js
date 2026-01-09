@@ -26,46 +26,67 @@ class Calculator {
         return string;
     }
     secondLargestNumber(numbers) {
-        const numerosOrdenados = [...numbers].sort((a, b) => b - a);
-        return "Segundo numero más grande " + numerosOrdenados[1] + " en la posición " + numbers.findIndex(num => num === numerosOrdenados[1]);
-        ;
+        const orderedNumbers = [...numbers].sort((a, b) => b - a);
+        return ("Segundo número más grande " +
+            orderedNumbers[1] +
+            " en la posición " +
+            numbers.findIndex((num) => num === orderedNumbers[1]));
     }
-    minus(number, numberN) {
-        let sum = 0;
-        for (const num of numberN) {
-            sum += num;
-        }
-        const resta = number - sum;
-        return resta;
+    countriesPopulation(countries, population) {
+        const orderedPopulation = [...population].sort((a, b) => b - a);
+        let moreIndex = population.findIndex((num) => num === orderedPopulation[0]);
+        let lessIndex = population.findIndex((num) => num === orderedPopulation[4]);
+        return ("El país con mas población es " +
+            countries[moreIndex] +
+            " con una población de " +
+            orderedPopulation[0] +
+            " y el país con menos población es " +
+            countries[lessIndex] +
+            " con una población de " +
+            orderedPopulation[4]);
     }
-    minus2(number, numberN) {
-        const sum = numberN.reduce((acc, num) => acc + num, 0);
-        return Math.max(0, number - sum);
-    }
-    div(dividend, divider) {
-        if (divider === 0) {
-            throw new Error("No se puede dividir entre cero.");
-        }
-        return dividend / divider;
-    }
-    multiply(numbers) {
-        let mul = 1;
+    primeNumbers(numbers) {
+        let sum = "";
         for (const num of numbers) {
-            mul *= num;
+            if (this.isPrime(num)) {
+                sum += num + " ";
+            }
         }
-        return mul;
+        return sum;
     }
-    multiply2(numbers) {
-        return numbers.reduce((acc, num) => acc * num, 1);
+    isPrime(num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
     }
-    exponentiation(number, exponent) {
-        const expon = number ** exponent;
-        return expon;
+    salary(hours, rate) {
+        let workerSalary = "";
+        for (let i = 0; i <= hours.length - 1; i++) {
+            workerSalary +=
+                "El trabajador " + (i + 1) + " obtiene " + hours[i] * rate[i] + "€ \n";
+        }
+        return workerSalary;
     }
-    sqrt(number) {
-        if (number < 0)
-            throw new Error("Raíz cuadrada no definida para números negativos.");
-        return Math.sqrt(number);
+    age(ages) {
+        const orderedAges = [...ages].sort((a, b) => a - b);
+        return orderedAges;
+    }
+    highTree(trees) {
+        let treeSum = trees.reduce((sum, num) => sum + num, 0);
+        let treeAverage = treeSum / trees.length;
+        let aboveAverage = 0;
+        for (const tree of trees) {
+            if (tree > treeAverage) {
+                aboveAverage++;
+            }
+        }
+        return aboveAverage;
     }
 }
 exports.Calculator = Calculator;
