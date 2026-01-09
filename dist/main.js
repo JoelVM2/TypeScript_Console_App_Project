@@ -87,28 +87,28 @@ function calculate() {
             switch (option) {
                 case 1: {
                     const nums = yield readNumbers();
-                    console.log("Resultado:", calc.sumSqr(nums));
+                    console.log("\nResultado:", calc.sumSqr(nums));
                     break;
                 }
                 case 2: {
-                    console.log("Resultado:", calc.fibonacci());
+                    console.log("\nResultado:", calc.fibonacci());
                     break;
                 }
                 case 3: {
                     const nums = yield readNumbers();
-                    console.log("Resultado:", calc.secondLargestNumber(nums));
+                    console.log("\nResultado:", calc.secondLargestNumber(nums));
                     break;
                 }
                 case 4: {
                     const countries = yield readWords("Introduce 5 Países separados por comas: ");
                     console.log("Introduce las poblaciones correspondientes.");
                     const population = yield readNumbers();
-                    console.log("Resultado:", calc.countriesPopulation(countries, population));
+                    console.log("\nResultado:", calc.countriesPopulation(countries, population));
                     break;
                 }
                 case 5: {
                     const nums = yield readNumbers();
-                    console.log("Resultado:", calc.primeNumbers(nums));
+                    console.log("\nResultado:", calc.primeNumbers(nums));
                     break;
                 }
                 case 6: {
@@ -116,19 +116,19 @@ function calculate() {
                     const hours = yield readNumbers();
                     console.log("Tarifas");
                     const rate = yield readNumbers();
-                    console.log("Resultado:", calc.salary(hours, rate));
+                    console.log("\nResultado:", calc.salary(hours, rate));
                     break;
                 }
                 case 7: {
                     console.log("Edades");
                     const age = yield readNumbers();
-                    console.log("Resultado:", calc.age(age));
+                    console.log("\nResultado:", calc.age(age));
                     break;
                 }
                 case 8: {
                     console.log("Árboles");
-                    const treeHigh = yield readNumbers();
-                    console.log("Resultado:", calc.highTree(treeHigh));
+                    const treeHeight = yield readNumbers();
+                    console.log("\nResultado:", calc.heightTree(treeHeight));
                     break;
                 }
                 case 0:

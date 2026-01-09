@@ -77,7 +77,7 @@ class Calculator {
         const orderedAges = [...ages].sort((a, b) => a - b);
         return orderedAges;
     }
-    highTree(trees) {
+    heightTree(trees) {
         let treeSum = trees.reduce((sum, num) => sum + num, 0);
         let treeAverage = treeSum / trees.length;
         let aboveAverage = 0;

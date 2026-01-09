@@ -1,5 +1,6 @@
 import * as readline from "readline";
 import { Calculator } from "./calculator";
+import { log } from "console";
 
 function printMenu() {
   console.log("\n=== Calculadora ===");
