@@ -48,28 +48,28 @@ async function calculate() {
     switch (option) {
       case 1: {
         const nums = await readNumbers();
-        console.log("Resultado:", calc.sumSqr(nums));
+        console.log("\nResultado:", calc.sumSqr(nums));
         break;
       }
       case 2: {
-        console.log("Resultado:", calc.fibonacci());
+        console.log("\nResultado:", calc.fibonacci());
         break;
       }
       case 3: {
         const nums = await readNumbers();
-        console.log("Resultado:", calc.secondLargestNumber(nums));
+        console.log("\nResultado:", calc.secondLargestNumber(nums));
         break;
       }
       case 4: {
         const countries = await readWords("Introduce 5 Países separados por comas: ");
         console.log("Introduce las poblaciones correspondientes.");
         const population = await readNumbers();
-        console.log("Resultado:", calc.countriesPopulation(countries, population));
+        console.log("\nResultado:", calc.countriesPopulation(countries, population));
         break;
       }
       case 5: {
         const nums = await readNumbers();
-        console.log("Resultado:", calc.primeNumbers(nums));
+        console.log("\nResultado:", calc.primeNumbers(nums));
         break;
       }
       case 6: {
@@ -77,19 +77,19 @@ async function calculate() {
         const hours = await readNumbers();
         console.log("Tarifas");
         const rate = await readNumbers();
-        console.log("Resultado:", calc.salary(hours, rate));
+        console.log("\nResultado:", calc.salary(hours, rate));
         break;
       }
       case 7: {
         console.log("Edades");
         const age = await readNumbers();
-        console.log("Resultado:", calc.age(age));
+        console.log("\nResultado:", calc.age(age));
         break;
       }
       case 8: {
         console.log("Árboles");
         const treeHeight = await readNumbers();
-        console.log("Resultado:", calc.heightTree(treeHeight));
+        console.log("\nResultado:", calc.heightTree(treeHeight));
         break;
       }
       case 0:
