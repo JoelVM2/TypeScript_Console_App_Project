@@ -1,12 +1,6 @@
 export class Calculator {
   constructor() {}
 
-  /**
-   * Calcula la suma de los números en un arreglo.
-   * @param numbers - Arreglo de números.
-   * @returns La suma de los números.
-   */
-
   public sumSqr(numbers: number[]): number {
     let sum = 0;
     for (const num of numbers) {
@@ -99,7 +93,7 @@ export class Calculator {
     return orderedAges
   }
 
-    public highTree(trees: number[]): number {
+    public heightTree(trees: number[]): number {
     let treeSum = trees.reduce((sum, num) => sum + num, 0);
     let treeAverage = treeSum / trees.length;
     let aboveAverage = 0;

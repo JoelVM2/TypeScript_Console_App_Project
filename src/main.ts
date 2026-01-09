@@ -88,8 +88,8 @@ async function calculate() {
       }
       case 8: {
         console.log("Árboles");
-        const treeHigh = await readNumbers();
-        console.log("Resultado:", calc.highTree(treeHigh));
+        const treeHeight = await readNumbers();
+        console.log("Resultado:", calc.heightTree(treeHeight));
         break;
       }
       case 0:
